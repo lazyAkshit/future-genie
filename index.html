@@ -4,8 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
+    <!-- Chat Interface HTML (Akshit's part) -->
+<div id="chatInterface" class="chat-interface hidden">
+    <div class="chat-header">
+        <div class="chat-header-title">
+            <button onclick="goBack()" class="back-button">
+                <i data-lucide="arrow-left"></i>
+                Back
+            </button>
+            <h2>Future Genie AI</h2>
+        </div>
+        <div class="chat-actions">
+            <button class="clear-chat">
+                <i data-lucide="trash-2"></i>
+            </button>
+            <div class="theme-toggle chat-theme-toggle">
+                <input type="checkbox" id="chat-theme-switch" class="theme-switch">
+                <label for="chat-theme-switch" class="theme-switch-label">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="chat-messages">
+        <div class="message bot">
+            <div class="message-avatar">
+                <i data-lucide="sparkles"></i>
+            </div>
+            <div class="message-content">
+                <p>Hi there! ✨ I'm Future Genie, your friendly career guide here to light the way toward your dream future 🌟. Before we dive into the possibilities, could you tell me a bit about yourself?</p>
+                <p>🔹 What's your current education qualification?<br>
+                🔹 And what are some of your interests or passions?</p>
+            </div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <div class="chat-input-container">
+            <input type="text" placeholder="Ask me anything about your career..." id="messageInput">
+            <button class="send-button" onclick="sendMessage()">
+                <i data-lucide="send"></i>
+            </button>
+        </div>
+        <div class="input-tools">
+            <button class="voice-input">
+                <i data-lucide="mic"></i>
+            </button>
+            <button class="attach-file">
+                <i data-lucide="paperclip"></i>
+            </button>
+        </div>
+    </div>
+</div> 
+    <script src="scripts/script.js"></script>
 </body>
 </html>

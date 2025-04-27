@@ -1,0 +1,316 @@
+/* Chat Interface styles (Akshit's part) */
+/* Chat Interface - Enhanced */
+.chat-interface {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background);
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.chat-interface.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.chat-header {
+    background: var(--chat-background);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    z-index: 10;
+}
+
+.chat-header-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat-header-title h2 {
+    font-size: 1.25rem;
+    color: var(--text);
+    margin: 0;
+    font-weight: 600;
+}
+
+.chat-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat-theme-toggle .theme-switch-label {
+    width: 48px;
+    height: 24px;
+}
+
+.chat-theme-toggle .slider {
+    width: 18px;
+    height: 18px;
+    top: 2px;
+}
+
+html[data-theme="dark"] .chat-theme-toggle .slider {
+    transform: translateX(23px);
+}
+
+.chat-theme-toggle .sun-icon,
+.chat-theme-toggle .moon-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.clear-chat {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--theme-transition);
+}
+
+.clear-chat:hover {
+    background: var(--message-bg);
+    color: var(--text);
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: var(--message-bg);
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--background);
+    position: relative;
+}
+
+.message {
+    display: flex;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: messageSlideIn 0.3s ease forwards;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 1rem;
+    position: relative;
+}
+
+@keyframes messageSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message-content {
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    line-height: 1.6;
+    position: relative;
+    max-width: 85%;
+    box-shadow: 0 2px 10px var(--shadow-light);
+    font-size: 0.95rem;
+}
+
+.message.bot .message-content {
+    background: var(--ai-message-bg);
+    color: var(--text);
+    border-top-left-radius: 0.25rem;
+    border: 1px solid var(--border);
+}
+
+.message.user .message-content {
+    background: var(--user-message-bg);
+    color: white;
+    border-top-right-radius: 0.25rem;
+}
+
+/* Typing indicator */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    background: var(--ai-message-bg);
+    border-radius: 1rem;
+    border-top-left-radius: 0.25rem;
+    width: fit-content;
+    margin-left: 2.5rem;
+    box-shadow: 0 2px 10px var(--shadow-light);
+    border: 1px solid var(--border);
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: typingAnimation 1.2s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    30% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+}
+
+/* Chat input area */
+.chat-input {
+    background: var(--chat-background);
+    padding: 1.25rem;
+    border-top: 1px solid var(--border);
+    position: relative;
+    box-shadow: 0 -2px 10px var(--shadow-light);
+}
+
+.chat-input-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background: var(--input-background);
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.chat-input-container:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 2px 12px rgba(16, 163, 127, 0.15);
+}
+
+.chat-input-container input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    font-size: 0.95rem;
+    background: transparent;
+    color: var(--text);
+}
+
+.chat-input-container input:focus {
+    outline: none;
+}
+
+.chat-input-container button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chat-input-container button:hover {
+    background: var(--primary-dark);
+}
+
+.chat-input-container button i {
+    width: 20px;
+    height: 20px;
+}
+
+/* Input tools styling */
+.input-tools {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+
+.voice-input, .attach-file {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--theme-transition);
+}
+
+.voice-input:hover, .attach-file:hover {
+    background: var(--message-bg);
+    color: var(--text);
+}
+
+/* Message avatar styling */
+.message-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.message-avatar i {
+    width: 20px;
+    height: 20px;
+}
