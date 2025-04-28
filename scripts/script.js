@@ -34,4 +34,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Initialize Lucide icons
 lucide.createIcons();
 // debugged
-//final
+//finally done
