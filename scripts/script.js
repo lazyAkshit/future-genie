@@ -3,6 +3,7 @@
 // Theme toggle functionality
 const themeSwitch = document.getElementById('theme-switch');
 const chatThemeSwitch = document.getElementById('chat-theme-switch');
+// debuggung in javascript 
 
 // Function to toggle between light and dark themes
 function toggleTheme() {
