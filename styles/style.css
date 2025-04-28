@@ -1,0 +1,349 @@
+/* Auth Modal Styles by parika  */
+/* debugged in css */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--modal-overlay);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+/* finalgti] */
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 40px var(--shadow-medium);
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.close-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--theme-transition);
+}
+
+.close-button:hover {
+    background: var(--message-bg);
+    color: var(--text);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.logo-icon {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.auth-header h2 {
+    color: var(--text);
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.auth-header p {
+    color: var(--text-light);
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+    background: var(--message-bg);
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 0.75rem;
+    text-align: center;
+    border: none;
+    background: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--theme-transition);
+    border-radius: 0.25rem;
+}
+
+.auth-tab.active {
+    background: var(--card-background);
+    color: var(--text);
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.auth-form-container {
+    position: relative;
+}
+
+.auth-form {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: translateY(10px);
+}
+
+.auth-form.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--input-background);
+    color: var(--input-text);
+    transition: var(--theme-transition);
+    font-size: 0.95rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(16, 163, 127, 0.2);
+}
+
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: var(--theme-transition);
+}
+
+.toggle-password:hover {
+    color: var(--text);
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--primary);
+    text-decoration: none;
+    margin-top: 0.5rem;
+}
+
+.auth-submit {
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--theme-transition);
+}
+
+.auth-submit:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 163, 127, 0.2);
+}
+
+.auth-divider {
+    position: relative;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border);
+}
+
+.auth-divider span {
+    position: relative;
+    background: var(--card-background);
+    padding: 0 1rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.try-btn {
+    width: 100%;
+    padding: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--message-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--theme-transition);
+}
+
+.try-btn:hover {
+    background: var(--background);
+    transform: translateY(-2px);
+}
+
+/* Theme Toggle Switch */
+.theme-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-switch {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.theme-switch-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 55px;
+    height: 28px;
+    background: var(--input-background);
+    border-radius: 50px;
+    padding: 0 5px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 5px var(--shadow-light);
+    overflow: hidden;
+}
+
+.sun-icon, .moon-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--text-light);
+    transition: var(--theme-transition);
+}
+
+.sun-icon {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+    color: #f59e0b;
+}
+
+.moon-icon {
+    opacity: 0.5;
+    transform: translateY(0) rotate(0);
+    color: #a855f7;
+}
+
+html[data-theme="dark"] .sun-icon {
+    opacity: 0.5;
+}
+
+html[data-theme="dark"] .moon-icon {
+    opacity: 1;
+}
+
+.slider {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 2px 4px var(--shadow-medium);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    left: 3px;
+    top: 2px;
+}
+
+html[data-theme="dark"] .slider {
+    transform: translateX(27px);
+    background: #2a2a3a;
+}

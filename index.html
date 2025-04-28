@@ -5,7 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<!-- DEbigged -->
+ <!-- /final -->
 <body>
-    
+    <!-- auth-toggle by parika -->
+<div id="authModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div class="auth-header">
+            <div class="auth-logo">
+                <i data-lucide="sparkles" class="logo-icon"></i>
+                <h2>Future Genie</h2>
+            </div>
+            <p>Your AI career counselor that helps you navigate your professional journey.</p>
+        </div>
+        <div class="auth-tabs">
+            <button class="auth-tab active" data-tab="login">Login</button>
+            <button class="auth-tab" data-tab="signup">Sign Up</button>
+        </div>
+        <div class="auth-form-container">
+            <form class="auth-form login-form active">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="youremail@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password">
+                            <i data-lucide="eye"></i>
+                        </button>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="auth-submit">Log In</button>
+            </form>
+            <form class="auth-form signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="youremail@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="signup-password" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password">
+                            <i data-lucide="eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="auth-submit">Create Account</button>
+            </form>
+        </div>
+        <div class="auth-divider">
+            <span>or</span>
+        </div>
+        <button class="try-btn" onclick="startChat()">
+            <i data-lucide="zap"></i>
+            Try Without Account
+        </button>
+    </div>
+</div>
 </body>
 </html>
