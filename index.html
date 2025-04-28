@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Future Genie - AI Career Counselling</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    
+    <div id="mainContent">
+        <nav class="navbar">
+            <div class="nav-content">
+                <div class="logo">
+                    <i data-lucide="sparkles"></i>
+                    <span>Future Genie</span>
+                </div>
+                <div class="nav-actions">
+                    <div class="nav-links">
+                        <a href="#how-it-works">How it Works</a>
+                        <a href="#team">Team</a>
+                    </div>
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="theme-switch" class="theme-switch">
+                        <label for="theme-switch" class="theme-switch-label">
+                            <i data-lucide="sun" class="sun-icon"></i>
+                            <i data-lucide="moon" class="moon-icon"></i>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <h1 class="animate-slide-up">Future Genie</h1>
+            <p class="animate-slide-up delay-1">
+                Your AI-powered career counselor that helps you navigate your professional journey with personalized guidance and insights.
+            </p>
+            <button onclick="showAuthModal()" class="cta-button animate-slide-up delay-2">
+                Get Started
+                <i data-lucide="arrow-right"></i>
+            </button>
+        </section>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
