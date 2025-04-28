@@ -166,3 +166,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     clearChatButton.addEventListener('click', clearChat);
 });
+//email updated
