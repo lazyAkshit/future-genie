@@ -21,6 +21,8 @@ function toggleTheme() {
 }
 
 // Load saved theme
+//final
+
 function loadSavedTheme() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
