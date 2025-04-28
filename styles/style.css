@@ -187,7 +187,7 @@ body {
         transform: translateY(0);
     }
 }
-
+/* added responsivenes */
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero h1 {
