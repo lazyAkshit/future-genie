@@ -16,4 +16,5 @@ document.querySelectorAll('.animate-on-scroll').forEach((element) => {
 });
 
 // Initialize Lucide icons
+//comments added
 lucide.createIcons();
