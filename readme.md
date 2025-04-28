@@ -36,9 +36,6 @@ Changes were pushed via pull requests (PRs).
 
 Final merges were reviewed and integrated into the main branch following proper GitHub practices.
 
-📸 Screenshots
-(Add project screenshots here if you want to make it look more awesome!)
-
 📈 Future Improvements
 Enhanced AI capabilities
 
